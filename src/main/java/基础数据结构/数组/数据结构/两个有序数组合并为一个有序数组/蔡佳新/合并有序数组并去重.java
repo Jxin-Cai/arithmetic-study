@@ -1,5 +1,7 @@
 package 基础数据结构.数组.数据结构.两个有序数组合并为一个有序数组.蔡佳新;
 
+import java.util.Arrays;
+
 /**
  * @author 蔡佳新
  * @version 1.0
@@ -42,11 +44,6 @@ public class 合并有序数组并去重 {
 
     public static void main(String[] args) {
         final int[] merge = merge(new int[]{-2,2,5,8,91,111,111,113,113}, new int[] {-1,2,4,5,7,7,7,9,9,211});
-        final StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < merge.length; i++) {
-            sb.append(merge[i])
-                    .append(",");
-        }
-        System.out.println(sb.toString());
+        System.out.println(Arrays.toString(merge));
     }
 }
