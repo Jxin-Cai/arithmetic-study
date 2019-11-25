@@ -17,6 +17,9 @@ public class 三数之和 {
             if(singleMap.get(nums[i]) != null){
                 continue;
             }
+            if(nums[i] > 0){
+                return result;
+            }
             singleMap.put(nums[i], nums[i]);
             recursion(nums, new HashMap<>(), i, i + 1, nums.length - 1, result);
         }
