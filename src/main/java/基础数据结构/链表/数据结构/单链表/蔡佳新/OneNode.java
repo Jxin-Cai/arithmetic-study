@@ -9,7 +9,7 @@ package 基础数据结构.链表.数据结构.单链表.蔡佳新;
 public class OneNode<T> {
     /**参数*/
     private T value;
-    /**单链表*/
+    /**下一个单链表*/
     private OneNode next;
     /**链表头*/
     private static OneNode HEADER = new OneNode();
@@ -41,14 +41,14 @@ public class OneNode<T> {
         if(next == null){
             return null;
         }
-        if(this.equals(END)){
-            END = null;
-        }
         while (true){
             final OneNode next1 = next.next();
             if (!this.equals(next1)){
                 next = next1;
                 continue;
+            }
+            if(this.equals(END)){
+                END = next;
             }
             next.setNext(next1.next());
             return (T) next1.value;
@@ -60,7 +60,11 @@ public class OneNode<T> {
         if(next == null){
             return null;
         }
-
+        if(END.equals(this)){
+            HEADER.setNext(null);
+            END = null;
+            return this.getValue();
+        }
         while (true){
             final OneNode next1 = next.next();
             if (!END.equals(next1)){

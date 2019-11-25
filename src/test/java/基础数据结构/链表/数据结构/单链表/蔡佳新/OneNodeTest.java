@@ -15,9 +15,9 @@ public class OneNodeTest {
     public void getValue() {
         final OneNode<String> oneNode = new OneNode("a");
 
-        oneNode.add("b");
+/*        oneNode.add("b");
         oneNode.add("c");
-        oneNode.add("d");
+        oneNode.add("d");*/
 
         oneNode.reomveEnd();
 
