@@ -3,6 +3,7 @@ package 基础数据结构.数组.算法题.三数之和.wzh;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * @author : 吴志恒
@@ -18,6 +19,7 @@ public class ThreeSum {
         List<List<Integer>> resultList = new ArrayList<>();
 
         Arrays.sort(arr);
+        int count= 0;
         for (int k = 0; k < (arr.length - 2); k++) {
             // 如果最小的值大于0，则没有符合的记录
             if (arr[k] > 0) {
@@ -28,19 +30,19 @@ public class ThreeSum {
             }
             int i = k + 1;
             int j = arr.length - 1;
-            int a = arr[i];
-            int b = arr[j];
+//            int a = arr[i];
+//            int b = arr[j];
             while (i < j) {
-                int sum = arr[k] + a + b;
+                int sum = arr[k] + arr[i] + arr[j];
                 // 如果相加是小于0，则往后面移，使相加的结果向0靠拢
                 if (sum < 0) {
-                    a = arr[++i];
+                    while (i < j && arr[i] == arr[++i]){ }
                 } else if (sum > 0) {
-                    b = arr[--j];
+                    while (i < j && arr[j] == arr[--j]){ }
                 } else {
                     resultList.add(new ArrayList<>(Arrays.asList(arr[k], arr[i], arr[j])));
-                    a = arr[++i];
-                    b = arr[--j];
+                    while (i < j && arr[i] == arr[++i]){ }
+                    while (i < j && arr[j] == arr[--j]){ }
                 }
             }
         }
@@ -48,7 +50,7 @@ public class ThreeSum {
     }
 
     public static void main(String[] args) {
-        int[] arr = {-1, -4, -6, 1, 0, 1, 2, 2, 3};
+        int[] arr = {-1, -4, -6, 1, 0, 1, 1,2, 2, 3};
         System.out.println(ThreeSum.threeSum(arr));
     }
 
