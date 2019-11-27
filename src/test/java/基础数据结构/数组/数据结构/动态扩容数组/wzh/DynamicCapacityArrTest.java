@@ -1,7 +1,6 @@
-package 基础数据结构.数组.数据结构.动态数组.wzh;
+package 基础数据结构.数组.数据结构.动态扩容数组.wzh;
 
 import org.junit.Test;
-import 基础数据结构.数组.数据结构.动态扩容数组.wzh.DynamicCapacityArr;
 import 基础数据结构.数组.数据结构.动态扩容数组.wzh.impl.DynamicCapacityArrImpl;
 
 /**
