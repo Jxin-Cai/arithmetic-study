@@ -21,7 +21,7 @@
     </build>
 
     <properties>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
     </properties>
     <!--全项目公共的包-->
     <dependencies>
